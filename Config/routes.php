@@ -21,3 +21,9 @@ Router::connect('/admin/faqs/:action/:id', array(
     'pass' => array('id'),
     'id' => '[0-9]+'
 ));
+
+Router::connect('/faqs', array(
+    'plugin' => 'FAQ',
+    'controller' => 'faqs',
+    'action' => 'index',
+));

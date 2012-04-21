@@ -1,5 +1,5 @@
 <div class="faqs index">
-	<h2><?php echo __('Faqs');?></h2>
+	<h2><?php echo __('FAQs');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
@@ -18,9 +18,9 @@
 		<td><?php echo h($faq['Faq']['created']); ?>&nbsp;</td>
 		<td><?php echo h($faq['Faq']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $faq['Faq']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $faq['Faq']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $faq['Faq']['id']), null, __('Are you sure you want to delete # %s?', $faq['Faq']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), '/admin/faqs/view/'.$faq['Faq']['id']); ?>
+			<?php echo $this->Html->link(__('Edit'), '/admin/faqs/edit/'.$faq['Faq']['id']); ?>
+			<?php echo $this->Form->postLink(__('Delete'), '/admin/faqs/delete/'.$faq['Faq']['id'], null, __('Are you sure you want to delete # %s?', $faq['Faq']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -43,6 +43,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Faq'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Faq'), '/admin/faqs/add'); ?></li>
 	</ul>
 </div>
