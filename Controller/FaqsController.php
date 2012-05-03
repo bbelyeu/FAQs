@@ -24,6 +24,7 @@ class FaqsController extends FAQAppController {
  * @return void
  */
 	public function admin_index() {
+        $this->helpers[] = 'Text';
 		$this->Faq->recursive = 0;
 		$this->set('faqs', $this->paginate());
 	}

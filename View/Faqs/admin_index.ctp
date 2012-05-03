@@ -14,7 +14,14 @@
 	<tr>
 		<td><?php echo h($faq['Faq']['id']); ?>&nbsp;</td>
 		<td><?php echo h($faq['Faq']['question']); ?>&nbsp;</td>
-		<td><?php echo h($faq['Faq']['answer']); ?>&nbsp;</td>
+		<td><?php echo $this->Text->truncate(
+            h($faq['Faq']['answer']),
+            100,
+            array(
+                'ending' => '...',
+                'exact' => false,
+                'html' => true
+            )); ?>&nbsp;</td>
 		<td><?php echo h($faq['Faq']['created']); ?>&nbsp;</td>
 		<td><?php echo h($faq['Faq']['modified']); ?>&nbsp;</td>
 		<td class="actions">

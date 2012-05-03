@@ -1,3 +1,6 @@
+<?php
+    $this->Html->script('/blog/ckeditor/ckeditor.js', array('inline' => false));
+?>
 <div class="faqs form">
 <?php echo $this->Form->create('Faq');?>
 	<fieldset>
@@ -5,7 +8,9 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('question');
-		echo $this->Form->input('answer');
+		echo $this->Form->input('answer', array(
+            'class' => 'ckeditor'
+        ));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
